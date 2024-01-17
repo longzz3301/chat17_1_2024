@@ -1,0 +1,50 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserEntity {
+  id: String
+  email: String!
+  username: String!
+  password: String!
+  Age: Float!
+}
+
+type Query {
+  authen(id: Int!): UserEntity!
+  users: [UserEntity!]!
+  user(id: Int!): UserEntity!
+}
+
+type Mutation {
+  RegisterUser(register: RegisterDto!): UserEntity!
+  loginUser(login: LoginDto!): UserEntity!
+  removeAuthen(id: Int!): UserEntity!
+  createUser(createUserInput: CreateUserInput!): UserEntity!
+  updateUser(updateUserInput: UpdateUserInput!): UserEntity!
+  removeUser(id: Int!): UserEntity!
+}
+
+input RegisterDto {
+  username: String!
+  password: String!
+  confirmPassword: String!
+  email: String!
+  Age: Float!
+}
+
+input LoginDto {
+  email: String!
+  password: String!
+}
+
+input CreateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
